@@ -10,12 +10,6 @@
 - [Funcionalidades](#funcionalidades)
 - [Requisitos](#requisitos)
 - [Instalação e Execução](#instalacao-e-execucao)
-- [Como Usar](#como-usar)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Exemplos de Uso](#exemplos-de-uso)
-- [Contribuição](#contribuicao)
-- [Licença](#licenca)
-- [Contato](#contato)
 
 ---
 
@@ -58,8 +52,8 @@ O sistema permite exportar as listas de produtos e carrinho de compras para arqu
 
 ## Instalação e Execução
 
+- Clone o repositorio usando o seguinte comando
 ```Bash
-Clone o repositorio em seu computador usando o seguinte comando
 git clone https://github.com/paulovcb1/Mercado/tree/main "nome-da-pasta"
 
 
