@@ -153,8 +153,8 @@
         int encontrado = 0;
         for(int i = 0; i < totalProdutos; i++){
             if(codigo == estoque[i].codigo){
-                printf("Produto encontrado");
-                printf("Nome: %s || Codigo: %d || Preco: %2.f", estoque[i].nome, estoque[i].codigo, estoque[i].preco);
+                printf("Produto encontrado!\n");
+                printf("Nome: %s || Codigo: %d || Preco: %2.f\n", estoque[i].nome, estoque[i].codigo, estoque[i].preco);
                 encontrado = 1;
                 break;
             }
@@ -170,11 +170,12 @@
     printf("\n--- Menu ---\n");
     printf("1. Cadastrar Produto\n");
     printf("2. Listar Produtos\n");
-    printf("3. Adicionar Produto ao Carrinho\n");
-    printf("4. Visualizar Carrinho\n");
-    printf("5. Verificar Produto no Carrinho\n");
-    printf("6. Fechar Pedido\n");
-    printf("7. Sair\n");
+    printf("3. Informacao do produto\n");
+    printf("4. Adicionar Produto ao Carrinho\n");
+    printf("5. Visualizar Carrinho\n");
+    printf("6. Verificar Produto no Carrinho\n");
+    printf("7. Fechar Pedido\n");
+    printf("8. Sair\n");
     printf("Escolha uma opcao: ");
 
 }
@@ -205,34 +206,40 @@ int main (){
                 system("cls");
                 break;
             case 3:
+                printf("Insira aqui o codigo do produto: ");
+                scanf("%d", &codigoProduto);
+                infoProduto(codigoProduto);
+                system("pause");
+                break;
+            case 4:
             system("cls");
                 comprarProduto();
                 system("cls");
                 break;
-            case 4:
+            case 5:
             system("cls");
                 visualizarCompra();
                 system("cls");
                 break;
-            case 5:
+            case 6:
                 printf("Insira o codigo do produto\n");
                 scanf("%d", &codigoProduto);
                 temNoCarrinho(codigoProduto);
                 system("pause");
                 break;
-             case 6:
+             case 7:
             system("cls");
                 fecharPedido();
                 system("cls");
                 break;
 
-            case 7:
+            case 8:
                 printf("Saindo...\n");
                 break;
             default:
                 printf("Opcao invalida! Tente novamente.\n");
         }
-    } while (opcao != 6);
+    } while (opcao != 8);
     
     return 0;
 
