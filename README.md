@@ -40,6 +40,19 @@ Este projeto é um sistema simples de supermercado, implementado em C, que permi
   - `estoque[MAX_PRODUTOS]`: Um array que armazena os produtos cadastrados.
   - `carrinho[MAX_CARRINHO]`: Um array que armazena os itens adicionados ao carrinho.
  
+## Funções Principais
+- **Cadastrar Produto** `(cadastrarProduto())`: Adiciona um novo produto ao estoque.
+- **Listar Produtos** `(listarProdutos())`: Exibe todos os produtos cadastrados no sistema.
+- **Comprar Produto** `(comprarProduto())`: Adiciona produtos ao carrinho utilizando o código do produto.
+- **Visualizar Carrinho** `(visualizarCompra())`: Exibe todos os itens no carrinho de compras, com suas quantidades e subtotais.
+- **Fechar Pedido** `(fecharPedido())`: Finaliza o pedido, exibe o valor total e esvazia o carrinho.
+- **Remover Produto do Carrinho** `(removerItensCarrinho())`: Remove um produto do carrinho com base no código do produto.
+- **Exportar para CSV**:
+  - `importarExcelCarrinho()`: Exporta os itens do carrinho para um arquivo CSV.
+  - `importarExcelProdutos()`: Exporta os produtos cadastrados no estoque para um arquivo CSV.
+- **Verificar Produto no Estoque** `(infoProduto(int codigo))`: Verifica se um produto com determinado código existe no estoque.
+- **Verificar Produto no Carrinho** `(temNoCarrinho(int codigo))`: Verifica se um produto com determinado código está no carrinho.
+ 
 ## Exportação para uma planilha
 O sistema permite exportar as listas de produtos e carrinho de compras para arquivos CSV:
 - **Atenção** no caso de compilar o codigo em um compilador online as funcoes de exportar para planilhas não funcionará corretamente
