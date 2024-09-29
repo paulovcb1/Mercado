@@ -20,7 +20,7 @@
     int quantidade;
  } ItemCarrinho;
 
-
+// variavel global
  Produto estoque [max_produtos];
  ItemCarrinho carrinho [max_carrinho];
  int totalProdutos = 0;
@@ -28,7 +28,7 @@
  FILE *csv;
 
 
- 
+//  funcao de cadastro de produto
     void cadastrarProduto(){
         if (totalProdutos < max_produtos){
             Produto novoProduto;
@@ -52,6 +52,8 @@
         }
     }
 
+
+// funcao para listar todos os produtos cadastrados
     void listarProdutos (){
         if(totalProdutos > 0){
             printf("Produtos disponiveis:\n");
@@ -69,6 +71,7 @@
         }
     }
 
+// funcao para adicionar ao carrinho
     void comprarProduto(){
         listarProdutos();
         int codigo, quantidade;
@@ -111,6 +114,7 @@
 
     }
 
+    // funcao para ver os itens do carrinho
     void visualizarCompra (){
 
         if(totalItensCarrinhos > 0){
@@ -127,6 +131,7 @@
         }
     }
 
+    // funcao que soma o total do valor do carrinho e ao final retiroa os itens do carrinho
     void fecharPedido(){
         if(totalItensCarrinhos > 0){
 
@@ -154,7 +159,7 @@
 
     }
 
-
+    // funcao para verificar se tem o item passado no carrinho
     void temNoCarrinho (int codigo){
         int encontrado = 0;
         for (int i = 0; i < totalItensCarrinhos; i++){
@@ -171,6 +176,7 @@
 
     }
 
+    // funcao para verificar existencia do produto com base do id
     void infoProduto(int codigo){
         int encontrado = 0;
         for(int i = 0; i < totalProdutos; i++){
@@ -267,23 +273,69 @@
 
 }
 
+    void menu_excel(){
+        int opcao;
+        printf("\n--- Menu ---\n");
+        printf("1. Importar Carrinho\n");
+        printf("2. Importar Produto\n");
+        scanf("%d", &opcao);
 
-void importarExcel (){
+        switch (opcao){
+        case 1:
+            importarExcelCarrinho();
+            break;
+        case 2: 
+            importarExcelProdutos();
+            break;
+        
+        default:
+        printf("Opcao invalida!\n");
+            break;
+        }
+    }
 
-    csv = fopen("fatura.csv", "wb");
+
+void importarExcelCarrinho (){
+
+    float totalCompra = 0;
+    csv = fopen("Carrinho.csv", "wb");
     if(csv == NULL){
         printf("Erro ao abrir o arquivo!\n");
     }
 
-    fprintf(csv, "Codigo;Nome;Preco;Quantidade;\n");
+    fprintf(csv, "Codigo;Nome;Preco;Quantidade;Subtotal;Total\n");
     
     for(int i = 0; i < totalItensCarrinhos; i++){
-        fprintf(csv, "%d;%s;%2.f;%d;\n", carrinho[i].produto.codigo, carrinho[i].produto.nome, carrinho[i].produto.preco, carrinho[i].quantidade);
+        float subtotal = carrinho[i].produto.preco * carrinho[i].quantidade;
+        totalCompra += subtotal;
+        fprintf(csv, "%d;%s;%2.f;%d;%2.2f;%2.f;\n", carrinho[i].produto.codigo, carrinho[i].produto.nome, carrinho[i].produto.preco, carrinho[i].quantidade, subtotal, totalCompra);
+        
+    }
+    
+
+    fclose(csv);
+    printf("Dados Convertidos com sucesso para o excel!");
+    system("Carrinho.csv");
+
+}
+
+
+void importarExcelProdutos (){
+
+    csv = fopen("Produtos.csv", "wb");
+    if(csv == NULL){
+        printf("Erro ao abrir o arquivo!\n");
+    }
+
+    fprintf(csv, "Codigo;Nome;Preco;\n");
+    
+    for(int i = 0; i < totalItensCarrinhos; i++){
+        fprintf(csv, "%d;%s;%2.2f;\n", estoque[i].codigo, estoque[i].nome, estoque[i].preco);
     }
 
     fclose(csv);
     printf("Dados Convertidos com sucesso para o excel!");
-    system("fatura.csv");
+    system("Produtos.csv");
 
 }
 
@@ -341,11 +393,17 @@ int main (){
                 break;
 
             case 9:
+
                 printf("Saindo...\n");
+
                 break;
+
             case 10:
-                importarExcel();
+
+                menu_excel();
+
                 break;
+
             default:
                 printf("Opcao invalida! Tente novamente.\n");
         }
