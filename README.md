@@ -48,7 +48,7 @@ Este projeto é um sistema simples de supermercado, implementado em C, que permi
  
 ## Exportação para uma planilha
 O sistema permite exportar as listas de produtos e carrinho de compras para arquivos CSV:
-**Atenção** no caso de compilar o codigo em um compilador online as funcoes de exportar para planilhas não funcionará corretamente
+- **Atenção** no caso de compilar o codigo em um compilador online as funcoes de exportar para planilhas não funcionará corretamente
 
 ## Requisitos
 
