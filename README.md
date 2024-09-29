@@ -9,7 +9,8 @@
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Requisitos](#requisitos)
-- [Instalação e Execução](#instalacao-e-execucao)
+- [Exportação para uma planilha](#Exportação-para-uma-planilha)
+- [Instalação e Execução](#Instalação-e-Execução)
 
 ---
 
