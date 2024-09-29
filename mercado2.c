@@ -25,6 +25,7 @@
  ItemCarrinho carrinho [max_carrinho];
  int totalProdutos = 0;
  int totalItensCarrinhos = 0;
+ FILE *csv;
 
 
  
@@ -41,33 +42,41 @@
 
             estoque[totalProdutos] = novoProduto;
             totalProdutos++;
-            printf("produto cadastrado com sucesso!");
+            printf("produto cadastrado com sucesso!\n");
+             system("pause");
+             system("cls");
         } else {
             printf("Estoque cheio, nao foi possivel cadastrar o produto!\n");
+            system("pause");
+            system("cls");
         }
     }
 
     void listarProdutos (){
         if(totalProdutos > 0){
             printf("Produtos disponiveis:\n");
+            printf("----------------------------------\n");
 
             for (int i = 0; i < totalProdutos; i++){
-                printf("Codigo: %d || Nome: %s || preco: %f\n", estoque[i].codigo, estoque[i].nome, estoque[i].preco);
+                printf("Codigo: %d || Nome: %s || preco: %2.2f\n", estoque[i].codigo, estoque[i].nome, estoque[i].preco);
             }
-            
+            printf("----------------------------------\n");
+
         } else {
-            printf("bnao ha nenhum produto cadastrado no sistema!");
+            printf("nao ha nenhum produto cadastrado no sistema!\n");
+            system("pause");
+            system("cls");
         }
     }
 
     void comprarProduto(){
-
+        listarProdutos();
         int codigo, quantidade;
 
-        printf("Digite o codigo do produto");
+        printf("Digite o codigo do produto: ");
         scanf("%d", &codigo);
 
-        int encontrado = 0;
+        int encontrado = -1;
 
         for (int i = 0; i < totalProdutos; i++){
             if(estoque[i].codigo == codigo){
@@ -76,7 +85,7 @@
             }
         }
         
-        if (encontrado != 1){
+        if (encontrado >= 0){
             printf("Digite a quantidade: ");
             scanf("%d", &quantidade);
 
@@ -85,13 +94,19 @@
                 carrinho[totalItensCarrinhos].quantidade = quantidade;
                 totalItensCarrinhos++;
                 printf("Produto adicionado ao carrinho!\n");
+                system("pause");
+            system("cls");
 
             }  else {
-                printf("Carrinho cheio! Nao e possivel adicionar itens");
+                printf("Carrinho cheio! Nao e possivel adicionar itens\n");
+                system("pause");
+            system("cls");
             }
 
         }   else {
-            printf("produto nao encontrado");
+            printf("produto nao encontrado\n");
+            system("pause");
+            system("cls");
         }
 
     }
@@ -103,8 +118,12 @@
                 
                 printf("Quantidade: %d || Produto: %s || preco unitario: %2.f || subtotal: %2.f\n", carrinho[i].quantidade, carrinho[i].produto.nome, carrinho[i].produto.preco, carrinho[i].produto.preco * carrinho[i].quantidade);
             }
+            system("pause");
+            system("cls");
         }   else {
-            printf("O carrinho esta vazio");
+            printf("O carrinho esta vazio\n");
+            system("pause");
+            system("cls");
         }
     }
 
@@ -124,9 +143,13 @@
 
 
             totalItensCarrinhos = 0;
-            printf("Pedido Finalizado com sucesso");
+            printf("Pedido Finalizado com sucesso\n");
+            system("pause");
+            system("cls");
         }   else {
             printf("O carrinho esta vazio. Nao ha pedido a ser finalizado. \n");
+            system("pause");
+            system("cls");
         }
 
     }
@@ -142,9 +165,8 @@
                 break;
             } 
         }
-
         if(!encontrado){
-                printf("Produto nao encontrado no carrinho");
+                printf("Produto nao encontrado no carrinho\n");
         }
 
     }
@@ -158,10 +180,11 @@
                 encontrado = 1;
                 break;
             }
+        }    
             if(!encontrado){
-                printf("Produto nao cadastrado!");
+                printf("Produto nao cadastrado!\n");
             }
-        }
+        
 
     }
 
@@ -182,10 +205,14 @@
             }
             totalItensCarrinhos --;
 
-            printf("Produto removido com sucesso");
+            printf("Produto removido com sucesso\n");
+            system("pause");
+            system("cls");
 
         } else{
-            printf("Produto nao encontrado no carrinho");
+            printf("Produto nao encontrado no carrinho\n");
+            system("pause");
+            system("cls");
         }
 
     }
@@ -197,6 +224,7 @@
         scanf("%d", &codigoProduto);
         temNoCarrinho(codigoProduto); // Função que verifica se o produto está no carrinho
         system("pause");
+        system("cls");
     }
 
 
@@ -206,6 +234,7 @@
         scanf("%d", &codigoProduto);
         infoProduto(codigoProduto); // Função que verifica se o produto está no carrinho
         system("pause");
+        system("cls");
     }
 
 
@@ -219,6 +248,7 @@
         scanf("%d", &codigoProduto);
         removerItensCarrinho(codigoProduto); // Função que verifica se o produto está no carrinho
         system("pause");
+        system("cls");
     }
 
 
@@ -238,6 +268,26 @@
 }
 
 
+void importarExcel (){
+
+    csv = fopen("fatura.csv", "wb");
+    if(csv == NULL){
+        printf("Erro ao abrir o arquivo!\n");
+    }
+
+    fprintf(csv, "Codigo;Nome;Preco;Quantidade;\n");
+    
+    for(int i = 0; i < totalItensCarrinhos; i++){
+        fprintf(csv, "%d;%s;%2.f;%d;\n", carrinho[i].produto.codigo, carrinho[i].produto.nome, carrinho[i].produto.preco, carrinho[i].quantidade);
+    }
+
+    fclose(csv);
+    printf("Dados Convertidos com sucesso para o excel!");
+    system("fatura.csv");
+
+}
+
+
 
 
 
@@ -248,6 +298,7 @@ int main (){
     do{
         exibirMenu();
         scanf("%d", &opcao);
+        system("cls");
         switch (opcao) {
             case 1:
                 
@@ -257,6 +308,8 @@ int main (){
             case 2:
             
                 listarProdutos();
+                system("pause");
+                system("cls");
                 
                 break;
             case 3:
@@ -289,6 +342,9 @@ int main (){
 
             case 9:
                 printf("Saindo...\n");
+                break;
+            case 10:
+                importarExcel();
                 break;
             default:
                 printf("Opcao invalida! Tente novamente.\n");
