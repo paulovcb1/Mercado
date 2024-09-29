@@ -258,21 +258,7 @@
     }
 
 
-    void exibirMenu() {
-    printf("\n--- Menu ---\n");
-    printf("1. Cadastrar Produto\n");
-    printf("2. Listar Produtos\n");
-    printf("3. Informacao do produto\n");
-    printf("4. Remover Item do carrinho\n");
-    printf("5. Adicionar Produto ao Carrinho\n");
-    printf("6. Visualizar Carrinho\n");
-    printf("7. Verificar Produto no Carrinho\n");
-    printf("8. Fechar Pedido\n");
-    printf("9. Menu Excel\n");
-    printf("10. Sair\n");
-    printf("Escolha uma opcao: ");
 
-}
 
     void menu_excel(){
         int opcao;
@@ -341,6 +327,56 @@ void importarExcelProdutos (){
 }
 
 
+   void editarProduto (int codigo){
+
+        int encontrado = -1;
+        
+        for (int i = 0; i < totalProdutos; i++){
+            if (codigo == estoque[i].codigo){
+                encontrado = i;
+            }
+        }
+        printf("Insira o novo nome do produto: \n");
+        scanf("%s", &estoque[encontrado].nome);
+
+        printf("Insira o novo preco do produto: \n");
+        scanf("%f", &estoque[encontrado].preco);
+
+        printf("Produto editado com sucesso!\n");
+        system("pause");
+        system("cls");
+        
+    }
+
+    void atualizarProduto (){
+        int editarOpcao;
+        listarProdutos();
+
+        printf("Digite o codigo do produto que deseja atualizar: \n");
+        scanf("%d", &editarOpcao);
+
+        editarProduto(editarOpcao);
+
+    }
+
+    void exibirMenu() {
+    printf("\n--- Menu ---\n");
+    printf("1. Cadastrar Produto\n");
+    printf("2. Listar Produtos\n");
+    printf("3. Informacao do produto\n");
+    printf("4. Editar produto\n");
+    printf("5. Remover Item do carrinho\n");
+    printf("6. Adicionar Produto ao Carrinho\n");
+    printf("7. Visualizar Carrinho\n");
+    printf("8. Verificar Produto no Carrinho\n");
+    printf("9. Fechar Pedido\n");
+    printf("10. Menu Excel\n");
+    printf("11. Sair\n");
+    printf("Escolha uma opcao: ");
+
+}
+
+
 
 
 
@@ -370,36 +406,40 @@ int main (){
                 
                 break;
             case 4:
-                TirarItensDoCarrinho();
+                atualizarProduto();
                 
                 break;
             case 5:
-            
-                comprarProduto();
+                TirarItensDoCarrinho();
                 
                 break;
             case 6:
             
-                visualizarCompra();
+                comprarProduto();
                 
                 break;
             case 7:
+            
+                visualizarCompra();
+                
+                break;
+            case 8:
                 procurarProdutoNoCarrinho();
                 
                 break;
-             case 8:
+             case 9:
             
                 fecharPedido();
                 
                 break;
 
-            case 9:
+            case 10:
 
                 menu_excel();
 
                 break;
 
-            case 10:
+            case 11:
 
                 printf("Saindo...\n");
 
@@ -408,7 +448,7 @@ int main (){
             default:
                 printf("Opcao invalida! Tente novamente.\n");
         }
-    } while (opcao != 10);
+    } while (opcao != 11);
     
     return 0;
 
