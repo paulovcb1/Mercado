@@ -33,6 +33,18 @@ Este projeto é um sistema simples de supermercado, implementado em C, que permi
 - Remover itens do carrinho.
 - Exportar dados para arquivos CSV.
 
+## Estrutura de Dados
+
+- **Structs**
+- `codigo`: Código único do produto.
+- `nome`: Nome do produto
+- `preco`: Preço do produto
+- **Item Carrinho**:
+- `produto`: Um produto da struct Produto.
+- `quantidade`: Quantidade do produto adicionada ao carrinho.
+- **Arrays**:
+- `estoque[MAX_PRODUTOS]`: Um array que armazena os produtos cadastrados.
+- `carrinho[MAX_CARRINHO]`: Um array que armazena os itens adicionados ao carrinho.
 ## Requisitos
 
 - **Linguagem de Programação**: C
