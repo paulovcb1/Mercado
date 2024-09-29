@@ -165,6 +165,31 @@
 
     }
 
+    void removerItensCarrinho (int codigo){
+        
+        int encontrado = 1;
+
+        for(int i = 0; i < totalItensCarrinhos; i++){
+            if(codigo = carrinho[i].produto.codigo){
+                encontrado = i;
+                break;
+            }
+        }
+
+        if(!encontrado){
+            for (int i = encontrado; i < totalItensCarrinhos - 1; i++) {
+                carrinho[i] = carrinho[i + 1];  // Reajustar a ordem dos itens no carrinho
+            }
+            totalItensCarrinhos --;
+
+            printf("Produto removido com sucesso");
+
+        } else{
+            printf("Produto nao encontrado no carrinho");
+        }
+
+    }
+
 
     void procurarProdutoNoCarrinho() {
         int codigoProduto;
@@ -184,16 +209,30 @@
     }
 
 
+        void TirarItensDoCarrinho() {
+        int codigoProduto;
+        printf("Itens do carrinho\n");
+        for (int i = 0; i < totalItensCarrinhos; i++){
+            printf("Codigo: %d || Nome: %s || Preco: %2.f || Quantidade: %d\n",carrinho[i].produto.codigo, carrinho[i].produto.nome, carrinho[i].produto.preco, carrinho[i].quantidade);
+        }
+        printf("Insira o codigo do produto que deseha remover\n");
+        scanf("%d", &codigoProduto);
+        removerItensCarrinho(codigoProduto); // Função que verifica se o produto está no carrinho
+        system("pause");
+    }
+
+
     void exibirMenu() {
     printf("\n--- Menu ---\n");
     printf("1. Cadastrar Produto\n");
     printf("2. Listar Produtos\n");
     printf("3. Informacao do produto\n");
-    printf("4. Adicionar Produto ao Carrinho\n");
-    printf("5. Visualizar Carrinho\n");
-    printf("6. Verificar Produto no Carrinho\n");
-    printf("7. Fechar Pedido\n");
-    printf("8. Sair\n");
+    printf("4. Remover Item do carrinho\n");
+    printf("5. Adicionar Produto ao Carrinho\n");
+    printf("6. Visualizar Carrinho\n");
+    printf("7. Verificar Produto no Carrinho\n");
+    printf("8. Fechar Pedido\n");
+    printf("9. Sair\n");
     printf("Escolha uma opcao: ");
 
 }
@@ -204,53 +243,57 @@
 
 
 int main (){
-    int opcao, codigoProduto;
+    int opcao;
 
     do{
         exibirMenu();
         scanf("%d", &opcao);
         switch (opcao) {
             case 1:
-                system("cls");
+                
                 cadastrarProduto();
-                system("cls");
+                
                 break;
             case 2:
-            system("cls");
+            
                 listarProdutos();
-                system("cls");
+                
                 break;
             case 3:
                 procurarProdutoNoEstoque();
-                system("pause");
+                
                 break;
             case 4:
-            system("cls");
-                comprarProduto();
-                system("cls");
+                TirarItensDoCarrinho();
+                
                 break;
             case 5:
-            system("cls");
-                visualizarCompra();
-                system("cls");
+            
+                comprarProduto();
+                
                 break;
             case 6:
-                procurarProdutoNoCarrinho();
-                system("pause");
+            
+                visualizarCompra();
+                
                 break;
-             case 7:
-            system("cls");
+            case 7:
+                procurarProdutoNoCarrinho();
+                
+                break;
+             case 8:
+            
                 fecharPedido();
-                system("cls");
+                
                 break;
 
-            case 8:
+            case 9:
                 printf("Saindo...\n");
                 break;
             default:
                 printf("Opcao invalida! Tente novamente.\n");
         }
-    } while (opcao != 8);
+    } while (opcao != 9);
     
     return 0;
 
