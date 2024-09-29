@@ -166,6 +166,24 @@
     }
 
 
+    void procurarProdutoNoCarrinho() {
+        int codigoProduto;
+        printf("Insira o codigo do produto\n");
+        scanf("%d", &codigoProduto);
+        temNoCarrinho(codigoProduto); // Função que verifica se o produto está no carrinho
+        system("pause");
+    }
+
+
+        void procurarProdutoNoEstoque() {
+        int codigoProduto;
+        printf("Insira o codigo do produto\n");
+        scanf("%d", &codigoProduto);
+        infoProduto(codigoProduto); // Função que verifica se o produto está no carrinho
+        system("pause");
+    }
+
+
     void exibirMenu() {
     printf("\n--- Menu ---\n");
     printf("1. Cadastrar Produto\n");
@@ -180,9 +198,6 @@
 
 }
 
-
-
-    
 
 
 
@@ -206,9 +221,7 @@ int main (){
                 system("cls");
                 break;
             case 3:
-                printf("Insira aqui o codigo do produto: ");
-                scanf("%d", &codigoProduto);
-                infoProduto(codigoProduto);
+                procurarProdutoNoEstoque();
                 system("pause");
                 break;
             case 4:
@@ -222,9 +235,7 @@ int main (){
                 system("cls");
                 break;
             case 6:
-                printf("Insira o codigo do produto\n");
-                scanf("%d", &codigoProduto);
-                temNoCarrinho(codigoProduto);
+                procurarProdutoNoCarrinho();
                 system("pause");
                 break;
              case 7:
