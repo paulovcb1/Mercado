@@ -1,8 +1,6 @@
-# Nome do Projeto
+# Sistema de Supermercado
 
-> Descrição curta e objetiva do projeto.
-
-![Licença](https://img.shields.io/badge/license-MIT-blue.svg)
+> Um sistema simples de gerenciamento de supermercado que utiliza estruturas de dados, como structs, arrays e funções, implementado na linguagem C.
 
 ---
 
@@ -11,7 +9,7 @@
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Requisitos](#requisitos)
-- [Instalação e Configuração](#instalacao-e-configuracao)
+- [Instalação e Execução](#instalacao-e-execucao)
 - [Como Usar](#como-usar)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Exemplos de Uso](#exemplos-de-uso)
@@ -23,29 +21,26 @@
 
 ## Sobre o Projeto
 
-Uma explicação detalhada do que o projeto faz, por que ele existe, e o problema que resolve. 
+Este projeto é um sistema simples de supermercado, implementado em C, que permite realizar operações como cadastro de produtos, adição de itens ao carrinho, visualização do carrinho e fechamento do pedido. O código utiliza estruturas como `struct` para organizar as informações de produtos e itens no carrinho, além de conceitos de arrays e funções.
 
 ## Funcionalidades
 
-- Funcionalidade 1
-- Funcionalidade 2
-- Funcionalidade 3
-- ...
+- Cadastrar produtos no sistema.
+- Listar todos os produtos disponíveis.
+- Adicionar produtos ao carrinho de compras.
+- Visualizar os itens no carrinho de compras.
+- Fechar pedido e calcular o valor total da compra.
+- Remover itens do carrinho.
+- Exportar dados para arquivos CSV.
 
 ## Requisitos
 
-Lista de requisitos para executar o projeto, como ferramentas, bibliotecas ou pacotes:
+- **Linguagem de Programação**: C
+- **Compilador**: GCC ou qualquer outro compilador que suporte a linguagem C.
+- **Sistema Operacional**: Windows ou Linux (em Linux, substitua o comando `system("cls")` por `system("clear")` se necessário).
 
-- **Linguagem de Programação**: C, Python, Java, etc.
-- **Bibliotecas**: Lista de dependências ou bibliotecas externas (com versões se aplicável).
-- **Outros**: Ferramentas adicionais, como MySQL, Node.js, etc.
+## Instalação e Execução
 
-## Instalação e Configuração
 
-Passos para instalar e configurar o projeto no ambiente local:
 
-### Clonar o Repositório
 
-```bash
-git clone https://github.com/usuario/repositorio.git
-cd repositorio
