@@ -2,6 +2,7 @@
 
 > Um sistema simples de gerenciamento de supermercado que utiliza estruturas de dados, como structs, arrays e funções, implementado na linguagem C.
 
+![Licença](https://img.shields.io/badge/license-MIT-blue.svg)
 ---
 
 ## Índice
