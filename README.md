@@ -36,22 +36,31 @@ Este projeto é um sistema simples de supermercado, implementado em C, que permi
 ## Estrutura de Dados
 
 - **Structs**
-- `codigo`: Código único do produto.
-- `nome`: Nome do produto
-- `preco`: Preço do produto
+  - `codigo`: Código único do produto.
+  - `nome`: Nome do produto
+  - `preco`: Preço do produto
 - **Item Carrinho**:
-- `produto`: Um produto da struct Produto.
-- `quantidade`: Quantidade do produto adicionada ao carrinho.
+  - `produto`: Um produto da struct Produto.
+  - `quantidade`: Quantidade do produto adicionada ao carrinho.
 - **Arrays**:
-- `estoque[MAX_PRODUTOS]`: Um array que armazena os produtos cadastrados.
-- `carrinho[MAX_CARRINHO]`: Um array que armazena os itens adicionados ao carrinho.
+  - `estoque[MAX_PRODUTOS]`: Um array que armazena os produtos cadastrados.
+  - `carrinho[MAX_CARRINHO]`: Um array que armazena os itens adicionados ao carrinho.
+ 
+## Exportação para uma planilha
+O sistema permite exportar as listas de produtos e carrinho de compras para arquivos CSV:
+**Atenção** no caso de compilar o codigo em um compilador online as funcoes de exportar para planilhas não funcionará corretamente
+
 ## Requisitos
 
 - **Linguagem de Programação**: C
 - **Compilador**: GCC ou qualquer outro compilador que suporte a linguagem C.
-- **Sistema Operacional**: Windows ou Linux (em Linux, substitua o comando `system("cls")` por `system("clear")` se necessário).
+- **Sistema Operacional**: Windows ou Linux (em Linux/MacOs, substitua o comando `system("cls")` por `system("clear")`).
 
 ## Instalação e Execução
+
+```Bash
+Clone o repositorio em seu computador usando o seguinte comando
+git clone https://github.com/paulovcb1/Mercado/tree/main "nome-da-pasta"
 
 
 
