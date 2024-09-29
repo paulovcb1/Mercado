@@ -199,7 +199,7 @@
         int encontrado = 1;
 
         for(int i = 0; i < totalItensCarrinhos; i++){
-            if(codigo = carrinho[i].produto.codigo){
+            if(codigo == carrinho[i].produto.codigo){
                 encontrado = i;
                 break;
             }
@@ -268,7 +268,8 @@
     printf("6. Visualizar Carrinho\n");
     printf("7. Verificar Produto no Carrinho\n");
     printf("8. Fechar Pedido\n");
-    printf("9. Sair\n");
+    printf("9. Menu Excel\n");
+    printf("10. Sair\n");
     printf("Escolha uma opcao: ");
 
 }
@@ -314,7 +315,7 @@ void importarExcelCarrinho (){
     
 
     fclose(csv);
-    printf("Dados Convertidos com sucesso para o excel!");
+    printf("Dados Convertidos com sucesso para o excel!\n");
     system("Carrinho.csv");
 
 }
@@ -334,7 +335,7 @@ void importarExcelProdutos (){
     }
 
     fclose(csv);
-    printf("Dados Convertidos com sucesso para o excel!");
+    printf("Dados Convertidos com sucesso para o excel!\n");
     system("Produtos.csv");
 
 }
@@ -394,20 +395,20 @@ int main (){
 
             case 9:
 
-                printf("Saindo...\n");
+                menu_excel();
 
                 break;
 
             case 10:
 
-                menu_excel();
+                printf("Saindo...\n");
 
                 break;
 
             default:
                 printf("Opcao invalida! Tente novamente.\n");
         }
-    } while (opcao != 9);
+    } while (opcao != 10);
     
     return 0;
 

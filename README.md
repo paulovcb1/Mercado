@@ -67,9 +67,14 @@ O sistema permite exportar as listas de produtos e carrinho de compras para arqu
 
 ## Instalação e Execução
 
-- Clone o repositorio usando o seguinte comando
+**Arquivo Executavel** 
+  - Baixe o arquivo executavel e o execute
+
+**Codigo Fonte**
+  - Caso tenha o GIT instalado em sua maquina
+  - Clone o repositorio usando o seguinte comando
 ```Bash
-git clone https://github.com/paulovcb1/Mercado/tree/main "nome-da-pasta"
+git clone https://github.com/paulovcb1/Mercado "nome-da-pasta"
 
 
 
