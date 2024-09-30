@@ -141,7 +141,6 @@ void fecharPedido() {
     system("cls");
 }
 
-// Outras funções removidas para manter o foco nas principais mudanças...
    // funcao para verificar se tem o item passado no carrinho
     void temNoCarrinho (int codigo){
         int encontrado = 0;
