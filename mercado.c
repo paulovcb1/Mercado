@@ -378,7 +378,6 @@ void fecharPedido() {
         editarCarrinho(editarOpcao);
         
     }
-// Todas as outras funções seguem a mesma logica de estrutura anterior com pequenas melhorias.
 
 // Menu principal
 void exibirMenu() {
