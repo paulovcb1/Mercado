@@ -393,7 +393,7 @@ void exibirMenu() {
     printf("8. Verificar Produto no Carrinho\n");
     printf("9. Editar Carrinho\n");
     printf("10. Fechar Pedido\n");
-    printf("11. Menu Excel\n");
+    printf("11. Exportar Excel\n");
     printf("12. Sair\n");
     printf("Escolha uma opcao: ");
 }
