@@ -240,28 +240,6 @@ void fecharPedido() {
     }
 
 
-
-
-    void menu_excel() {
-        int opcao;
-        printf("\n--- Menu ---\n");
-        printf("1. Importar Carrinho\n");
-        printf("2. Importar Produto\n");
-        scanf("%d", &opcao);
-
-        switch (opcao) {
-            case 1:
-                importarExcelCarrinho();
-                break;
-            case 2: 
-                importarExcelProdutos();
-                break;
-            default:
-                printf("Opcao invalida!\n");
-                break;
-        }
-    }
-
     void importarExcelCarrinho() {
         float totalCompra = 0;
         FILE *csv_carrinho = fopen("Carrinho.csv", "w");
@@ -303,6 +281,27 @@ void fecharPedido() {
         fclose(csv);
         printf("Dados Convertidos com sucesso para o excel!\n");
         system("start Produtos.csv");  
+    }
+
+
+    void menu_excel() {
+        int opcao;
+        printf("\n--- Menu ---\n");
+        printf("1. Importar Carrinho\n");
+        printf("2. Importar Produto\n");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                importarExcelCarrinho();
+                break;
+            case 2: 
+                importarExcelProdutos();
+                break;
+            default:
+                printf("Opcao invalida!\n");
+                break;
+        }
     }
 
 
