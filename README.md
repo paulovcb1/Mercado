@@ -17,7 +17,7 @@
 
 ## Sobre o Projeto
 
-Este projeto é um sistema simples de supermercado, implementado em C, que permite realizar operações como cadastro de produtos, adição de itens ao carrinho, visualização do carrinho e fechamento do pedido. O código utiliza estruturas como `struct` para organizar as informações de produtos e itens no carrinho, além de conceitos de arrays e funções.
+Este projeto é um sistema simples de supermercado, implementado em C, que permite realizar operações como cadastro de produtos, adição de itens ao carrinho, visualização do carrinho e fechamento do pedido. O código utiliza estruturas como struct para organizar as informações de produtos e itens no carrinho, além de conceitos de arrays e funções.
 
 ## Funcionalidades
 
