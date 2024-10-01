@@ -24,6 +24,8 @@ Este projeto é um sistema simples de supermercado, implementado em C, que permi
 - Cadastrar produtos no sistema.
 - Listar todos os produtos disponíveis.
 - Adicionar produtos ao carrinho de compras.
+- Editar Produtos.
+- Editar Produtos do carrinho.
 - Visualizar os itens no carrinho de compras.
 - Fechar pedido e calcular o valor total da compra.
 - Remover itens do carrinho.
@@ -57,13 +59,14 @@ Este projeto é um sistema simples de supermercado, implementado em C, que permi
  
 ## Exportação para uma planilha
 O sistema permite exportar as listas de produtos e carrinho de compras para arquivos CSV:
-- **Atenção** no caso de compilar o codigo em um compilador online as funcoes de exportar para planilhas não funcionará corretamente
+- **Atenção** no caso de compilar o codigo em um compilador online as funções de exportar para planilhas não funcionaram corretamente
 
 ## Requisitos
 
 - **Linguagem de Programação**: C
 - **Compilador**: GCC ou qualquer outro compilador que suporte a linguagem C.
 - **Sistema Operacional**: Windows ou Linux (em Linux/MacOs, substitua o comando `system("cls")` por `system("clear")`).
+- **Atenção** no caso de compilar o codigo em um compilador online algumas funções da biblioteca `<stdli.h>` como `system("cls")` e `system("pause")` não funcionaram corretamente
 
 ## Instalação e Execução
 
