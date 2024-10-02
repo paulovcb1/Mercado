@@ -13,6 +13,18 @@ typedef struct {
     int quantidade;
 } ItemCarrinho;
 
+// Inicializando funcoes antes de declara-las
+void cadastrarProduto(); void listarProdutos();
+void addCarrinho(); void visualizarCompra();
+void fecharPedido(); void temNoCarrinho(int codigo);
+void infoProduto(int codigo); void removerItensCarrinho (int codigo);
+void procurarProdutoNoCarrinho(); void procurarProdutoNoEstoque();
+void TirarItensDoCarrinho(); void importarExcelProdutos();
+void menu_excel(); void importarExcelCarrinho();
+void importarExcelProdutos(); void editarProduto (int codigo); void atualizarProduto ();
+void editarCarrinho (int codigo); void atualizarCarrinho ();
+void fluxo();
+
 // Variáveis globais
 FILE *csv;
 FILE *csv_carrinho;
