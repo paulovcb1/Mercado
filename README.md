@@ -41,8 +41,8 @@ Este projeto é um sistema simples de supermercado, implementado em C, que permi
   - `produto`: Um produto da struct Produto.
   - `quantidade`: Quantidade do produto adicionada ao carrinho.
 - **Arrays**:
-  - `estoque[MAX_PRODUTOS]`: Um array que armazena os produtos cadastrados.
-  - `carrinho[MAX_CARRINHO]`: Um array que armazena os itens adicionados ao carrinho.
+  - `estoque[50]`: Um array que armazena os produtos cadastrados.
+  - `carrinho[50]`: Um array que armazena os itens adicionados ao carrinho.
  
 ## Funções Principais
 - **Cadastrar Produto** `(cadastrarProduto())`: Adiciona um novo produto ao estoque.
