@@ -64,7 +64,7 @@ void listarProdutos() {
 }
 
 // Função para adicionar ao carrinho
-void comprarProduto() {
+void addCarrinho() {
     listarProdutos();
     int codigo, quantidade;
 
@@ -422,7 +422,7 @@ void fluxo() {
                 TirarItensDoCarrinho();
                 break;
             case 6:
-                comprarProduto();
+                addCarrinho();
                 break;
             case 7:
                 visualizarCompra();
