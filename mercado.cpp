@@ -306,7 +306,7 @@ void fecharPedido() {
 
     void editarProduto (int codigo){
 
-            int encontrado_carrinho, encontrado = -1;
+            int encontrado_carrinho = -1, encontrado = -1;
             
             for (int i = 0; i < totalProdutos; i++){
                 if (codigo == estoque[i].codigo){
@@ -316,7 +316,8 @@ void fecharPedido() {
             for (int i2 = 0; i2 < totalItensCarrinhos; i2++) {
                 if (codigo == carrinho[i2].produto.codigo){
                     encontrado_carrinho = i2;
-            }
+                }
+            }    
             if (encontrado != -1){
                 printf("Insira o novo nome do produto: \n");
                 scanf("%s", estoque[encontrado].nome);
@@ -340,7 +341,6 @@ void fecharPedido() {
             system("cls");
             
         }
-    }
 
     void atualizarProduto () {
         int editarOpcao;
