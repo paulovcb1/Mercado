@@ -2,9 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define max_produtos 50
-#define max_carrinho 50
-
 typedef struct {
     int codigo;
     char nome[50];
@@ -17,16 +14,17 @@ typedef struct {
 } ItemCarrinho;
 
 // Variáveis globais
-Produto estoque[max_produtos];
-ItemCarrinho carrinho[max_carrinho];
-int totalProdutos = 0;
-int totalItensCarrinhos = 0;
 FILE *csv;
 FILE *csv_carrinho;
+Produto estoque[50];
+ItemCarrinho carrinho[50];
+int totalProdutos = 0;
+int totalItensCarrinhos = 0;
+
 
 // Função de cadastro de produto
 void cadastrarProduto() {
-    if (totalProdutos < max_produtos) {
+    if (totalProdutos < 50) {
         Produto novoProduto;
 
         printf("Digite aqui o codigo do produto: ");
@@ -86,7 +84,7 @@ void comprarProduto() {
         printf("Digite a quantidade: ");
         scanf("%d", &quantidade);
 
-        if (totalItensCarrinhos < max_carrinho) {
+        if (totalItensCarrinhos < 50) {
             carrinho[totalItensCarrinhos].produto = estoque[encontrado];
             carrinho[totalItensCarrinhos].quantidade = quantidade;
             totalItensCarrinhos++;
